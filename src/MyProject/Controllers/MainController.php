@@ -8,4 +8,8 @@ class MainController
     {
         echo 'Главная страница';
     }
+    public function sayHello(string $name)
+    {
+        echo 'Привет, ' . $name;
+    }
 }
