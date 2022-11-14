@@ -1,8 +1,9 @@
 <?php
 
-require '../src/MyProject/Models/Users/Users.php';
-require '../src/MyProject/Models/Articles/Article.php';
+spl_autoload_register(function (string $className) {
+    require_once '../src/' . str_replace('\\', '/', $className) . '.php';
+});
 
-$author = new User('Иван');
-$article = new Article('Заголовок', 'Текст', $author);
+$author = new \MyProject\Models\Users\User('Иван');
+$article = new \MyProject\Models\Articles\Article('Заголовок', 'Текст', $author);
 var_dump($article);
